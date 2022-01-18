@@ -1,11 +1,8 @@
 {
-  "compilerOptions":
-    {
-      "target": "es2018",
-      "module": "commonjs",
-      "outDir": "dist",
-      "sourceMap": true
-    },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "rootDir": "./",
+    "esModuleInterop": true
+  }
 }
