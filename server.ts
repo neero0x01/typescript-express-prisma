@@ -1,11 +1,10 @@
-import express from 'express';
+import express, {Request, Response } from 'express'
 
-const app = express();
+const PORT = process.env.PORT || 3000
+const app = express()
 
-const PORT = process.env.PORT || 3000;
+app.get('/', (req: Request, res: Response) => {
+  res.send('Server is running')
+})
 
-app.get('/', (req, res) => {
-  res.send('Server is running!');
-});
-
-app.listen(PORT, () => console.log(`Server Running on http://localhost:3000/`));
+app.listen(PORT, () => console.error(`Express Server running on http://localhost:${PORT}`))
