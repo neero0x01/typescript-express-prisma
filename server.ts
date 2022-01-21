@@ -14,11 +14,8 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/products', async (req: Request, res: Response) => {
   const products = await prisma.product.findMany({
-    where: {
-      price: {
-        gte: 999,
-        lt: 14999
-      }
+    include: {
+      reviews: true
     }
   })
   res.json({ products })
